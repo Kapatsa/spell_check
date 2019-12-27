@@ -25,6 +25,8 @@
 /* Begin PBXFileReference section */
 		25FF0B9A23B6B46B003F2034 /* spell_check */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = spell_check; sourceTree = BUILT_PRODUCTS_DIR; };
 		25FF0B9D23B6B46B003F2034 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		25FF0BA423B6C668003F2034 /* dictionary.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dictionary.txt; sourceTree = "<group>"; };
+		25FF0BA523B6C668003F2034 /* text.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = text.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +59,8 @@
 		25FF0B9C23B6B46B003F2034 /* spell_check */ = {
 			isa = PBXGroup;
 			children = (
+				25FF0BA423B6C668003F2034 /* dictionary.txt */,
+				25FF0BA523B6C668003F2034 /* text.txt */,
 				25FF0B9D23B6B46B003F2034 /* main.cpp */,
 			);
 			path = spell_check;
