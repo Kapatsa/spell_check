@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		25FF0B9E23B6B46B003F2034 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 25FF0B9D23B6B46B003F2034 /* main.cpp */; };
+		25FF0BA823B726E2003F2034 /* errorHandler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 25FF0BA623B726E2003F2034 /* errorHandler.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -26,7 +27,10 @@
 		25FF0B9A23B6B46B003F2034 /* spell_check */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = spell_check; sourceTree = BUILT_PRODUCTS_DIR; };
 		25FF0B9D23B6B46B003F2034 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		25FF0BA423B6C668003F2034 /* dictionary.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dictionary.txt; sourceTree = "<group>"; };
-		25FF0BA523B6C668003F2034 /* text.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = text.txt; sourceTree = "<group>"; };
+		25FF0BA523B6C668003F2034 /* text.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = text.txt; path = spell_check/text.txt; sourceTree = SOURCE_ROOT; };
+		25FF0BA623B726E2003F2034 /* errorHandler.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = errorHandler.cpp; sourceTree = "<group>"; };
+		25FF0BA723B726E2003F2034 /* errorHandler.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = errorHandler.hpp; sourceTree = "<group>"; };
+		25FF0BA923B7289D003F2034 /* abc.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = abc.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,9 +63,12 @@
 		25FF0B9C23B6B46B003F2034 /* spell_check */ = {
 			isa = PBXGroup;
 			children = (
+				25FF0BA923B7289D003F2034 /* abc.txt */,
 				25FF0BA423B6C668003F2034 /* dictionary.txt */,
 				25FF0BA523B6C668003F2034 /* text.txt */,
 				25FF0B9D23B6B46B003F2034 /* main.cpp */,
+				25FF0BA623B726E2003F2034 /* errorHandler.cpp */,
+				25FF0BA723B726E2003F2034 /* errorHandler.hpp */,
 			);
 			path = spell_check;
 			sourceTree = "<group>";
@@ -124,6 +131,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				25FF0B9E23B6B46B003F2034 /* main.cpp in Sources */,
+				25FF0BA823B726E2003F2034 /* errorHandler.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

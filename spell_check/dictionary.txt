@@ -1,3 +1,4 @@
+hello
 sample
 absolutely
 honest
@@ -36,4 +37,10 @@ gotta
 program
 goodnight
 merry
+which
+value
+dwell
+years
+again
+until
 christmas
