@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		25FF0B9E23B6B46B003F2034 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 25FF0B9D23B6B46B003F2034 /* main.cpp */; };
 		25FF0BA823B726E2003F2034 /* errorHandler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 25FF0BA623B726E2003F2034 /* errorHandler.cpp */; };
+		25FF0BAC23B884CB003F2034 /* file_things.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 25FF0BAA23B884CB003F2034 /* file_things.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -31,6 +32,9 @@
 		25FF0BA623B726E2003F2034 /* errorHandler.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = errorHandler.cpp; sourceTree = "<group>"; };
 		25FF0BA723B726E2003F2034 /* errorHandler.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = errorHandler.hpp; sourceTree = "<group>"; };
 		25FF0BA923B7289D003F2034 /* abc.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = abc.txt; sourceTree = "<group>"; };
+		25FF0BAA23B884CB003F2034 /* file_things.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = file_things.cpp; sourceTree = "<group>"; };
+		25FF0BAB23B884CB003F2034 /* file_things.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = file_things.hpp; sourceTree = "<group>"; };
+		25FF0BAD23B898F0003F2034 /* text_with_bad_spelling.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = text_with_bad_spelling.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +73,9 @@
 				25FF0B9D23B6B46B003F2034 /* main.cpp */,
 				25FF0BA623B726E2003F2034 /* errorHandler.cpp */,
 				25FF0BA723B726E2003F2034 /* errorHandler.hpp */,
+				25FF0BAA23B884CB003F2034 /* file_things.cpp */,
+				25FF0BAB23B884CB003F2034 /* file_things.hpp */,
+				25FF0BAD23B898F0003F2034 /* text_with_bad_spelling.txt */,
 			);
 			path = spell_check;
 			sourceTree = "<group>";
@@ -132,6 +139,7 @@
 			files = (
 				25FF0B9E23B6B46B003F2034 /* main.cpp in Sources */,
 				25FF0BA823B726E2003F2034 /* errorHandler.cpp in Sources */,
+				25FF0BAC23B884CB003F2034 /* file_things.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

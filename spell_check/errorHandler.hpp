@@ -13,6 +13,7 @@
 
 const int FILEOPEN_ERR = 1;
 const int EMPTY_FILE_ERR = 2;
+const int BAD_INPUT = 3;
 
 struct ErrorHandler{
     int posRow;
