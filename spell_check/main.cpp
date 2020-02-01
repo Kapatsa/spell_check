@@ -64,6 +64,7 @@ int main(int argc, const char * argv[]) {
         //DICTIONARY AS A SET
         std::set<std::string> dic;
         std::set<std::string>::iterator it{};
+        std::vector<std::set<std::string>::iterator> iterators;
         while(!dictionary.eof()){
             getline(dictionary, strTemp, '\n');
             dic.insert(strTemp);
@@ -89,40 +90,52 @@ int main(int argc, const char * argv[]) {
                 //CREATING ALL WORDS WITH LEVENSTEIN DISTANCE LESS THAN ONE
                 //FROM THE GIVEN ONE
                 versions = versionsOfWord(word, abc);
+                iterators.clear();
                 for(int i = 0; i < versions.size(); ++i){
                     it = dic.find(versions[i]);
-                    //'it' is an iterator to the word which matched to the dictionary
-                    if (it != dic.end()) break;
-                }
-                if (*it == "") {
-                    std::cout << "No word \'" << word << "\' in dictionary. Add? (y/n): ";
-                    std::cin >> add;
-                    std::cin.ignore(std::numeric_limits<std::streamsize>::max(),'\n');
-                    if(add == 'y'){
-                    dictionary.close();
-                    dictionary.open(filename_dic, std::ios::app);
-                    dictionary << word << '\n';
-                    dic.insert(word);
-                    dictionary.close();
-                    dictionary.open(filename_dic, std::ios::in);
+                    if(*it != ""){
+                    iterators.push_back(it);
                     }
+                    //it = dic.find(versions[i])
+                    //'it' is an iterator to the word which matched to the dictionary
+                    //if (it != dic.end()) break;
                 }
-                else if (*it != word) {
-                    std::cout << word << " -> " << *it  << " ? (y/n) ";
-                    std::cin >> change;
-                    std::cin.ignore(std::numeric_limits<std::streamsize>::max(),'\n');
-                    if (change == 'y') textForEditing[l] = *it;
-                    else if (change == 'n') {
-                        std::cout << "No word \'" << word << "\' in dictionary. Add? (y/n): ";
-                        std::cin >> add;
+                std::cout << "Number of proposed changes: " <<  iterators.size() << std::endl;
+                for(int i = 0; i < iterators.size(); ++i){
+                    it = iterators[i];
+//                    if (*it == "") {
+//                        std::cout << "No word \'" << word << "\' in dictionary. Add? (y/n): ";
+//                        std::cin >> add;
+//                        std::cin.ignore(std::numeric_limits<std::streamsize>::max(),'\n');
+//                        if(add == 'y'){
+//                        dictionary.close();
+//                        dictionary.open(filename_dic, std::ios::app);
+//                        dictionary << word << '\n';
+//                        dic.insert(word);
+//                        dictionary.close();
+//                        dictionary.open(filename_dic, std::ios::in);
+//                        }
+//                    }
+                    if (*it != word) {
+                        std::cout << word << " -> " << *it  << " ? (y/n) ";
+                        std::cin >> change;
                         std::cin.ignore(std::numeric_limits<std::streamsize>::max(),'\n');
-                        if(add == 'y'){
-                            dictionary.close();
-                            dictionary.open(filename_dic, std::ios::app);
-                            dictionary << word << '\n';
-                            dic.insert(word);
-                            dictionary.close();
-                            dictionary.open(filename_dic, std::ios::in);
+                        if (change == 'y'){
+                            textForEditing[l] = *it;
+                            break;
+                        }
+                        else if (change == 'n' && i == iterators.size() - 1) {
+                            std::cout << "No word \'" << word << "\' in dictionary. Add? (y/n): ";
+                            std::cin >> add;
+                            std::cin.ignore(std::numeric_limits<std::streamsize>::max(),'\n');
+                            if(add == 'y'){
+                                dictionary.close();
+                                dictionary.open(filename_dic, std::ios::app);
+                                dictionary << word << '\n';
+                                dic.insert(word);
+                                dictionary.close();
+                                dictionary.open(filename_dic, std::ios::in);
+                            }
                         }
                     }
                 }
