@@ -15,8 +15,10 @@ std::vector<std::string> convertToVect(std::fstream &file, std::vector<bool> &te
     std::string tempWord{};
     std::vector<std::string> textForEditing;
 
+    //TODO::should work with any given alphabet
     while (!file.eof()){
         charTemp = file.get();
+        //if we read a letter
         if ((charTemp != ' ')&&
             (charTemp != ',')&&
             (charTemp != '.')&&
@@ -32,7 +34,7 @@ std::vector<std::string> convertToVect(std::fstream &file, std::vector<bool> &te
             word += charTemp;
         }
         else{
-            //symbols
+            //if we read a symbol
             if(word != ""){
                 //std::cout << "word: " << word << std::endl;
                 textOrNot.push_back(1);

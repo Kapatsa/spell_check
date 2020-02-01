@@ -19,11 +19,11 @@ const int MIN_SIZE = 4;
 int main(int argc, const char * argv[]) {
     
     std::string filename_txt =
-    "/Users/davidkapatsa/Documents/Programming/4th_year/spell_check/spell_check/text.txt";
+    "text.txt";
     std::string filename_dic =
-    "/Users/davidkapatsa/Documents/Programming/4th_year/spell_check/spell_check/dictionary.txt";
+"dictionary.txt";
     std::string filename_abc =
-    "/Users/davidkapatsa/Documents/Programming/4th_year/spell_check/spell_check/abc.txt";
+    "abc.txt";
 
     std::fstream txt(filename_txt, std::ios::in);
     std::fstream dictionary(filename_dic, std::ios::in);
@@ -63,7 +63,7 @@ int main(int argc, const char * argv[]) {
         std::string strTemp{};
         //DICTIONARY AS A SET
         std::set<std::string> dic;
-        std::set<std::string>::iterator it;
+        std::set<std::string>::iterator it{};
         while(!dictionary.eof()){
             getline(dictionary, strTemp, '\n');
             dic.insert(strTemp);
@@ -89,9 +89,9 @@ int main(int argc, const char * argv[]) {
                 //CREATING ALL WORDS WITH LEVENSTEIN DISTANCE LESS THAN ONE
                 //FROM THE GIVEN ONE
                 versions = versionsOfWord(word, abc);
-                //std::cout << "Size of versions vector: " << versions.size() << std::endl;
                 for(int i = 0; i < versions.size(); ++i){
                     it = dic.find(versions[i]);
+                    //'it' is an iterator to the word which matched to the dictionary
                     if (it != dic.end()) break;
                 }
                 if (*it == "") {
